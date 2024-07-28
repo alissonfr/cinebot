@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 import { buttonVariants } from '../ui/button';
 import { bot } from '@/app/data';
 
-export const TopbarIcons = [{ icon: Phone }, { icon: Video }, { icon: Info }];
+export const TopbarIcons = [{ icon: Info }];
 
 export default function ChatTopbar() {
   return (
@@ -23,7 +23,7 @@ export default function ChatTopbar() {
           </Avatar>
           <div className="flex flex-col">
             <span className="font-medium">{bot.name}</span>
-            <span className="text-xs">Active 2 mins ago</span>
+            <span className="text-xs">Online</span>
           </div>
         </div>
 

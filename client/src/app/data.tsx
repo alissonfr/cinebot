@@ -34,5 +34,5 @@ export const bot: User = {
 
 export const user: User = {
     avatar: '/user.png',
-    name: 'Voce',
+    name: 'Você',
 };

@@ -25,12 +25,12 @@ export default function Home() {
       </div>
 
       <div className="z-10 border rounded-lg max-w-5xl w-full h-full text-sm lg:flex">
-        <ChatLayout defaultLayout={defaultLayout} navCollapsedSize={8} />
+        <ChatLayout defaultLayout={defaultLayout} />
       </div>
 
       <div className="flex justify-between max-w-5xl w-full items-start text-xs md:text-sm text-muted-foreground ">
       <span></span>
-      <p className="max-w-[150px] sm:max-w-lg text-right">Codigo fonte disponivel no <a className="font-semibold" href="https://github.com/alissonfr/cinechat">GitHub</a>.</p>
+      <p className="max-w-[150px] sm:max-w-lg text-right">Código fonte disponível no <a className="font-semibold" href="https://github.com/alissonfr/cinechat">GitHub</a>.</p>
       </div>
     </main>
   );

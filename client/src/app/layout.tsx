@@ -3,8 +3,8 @@ import { GeistSans } from 'geist/font/sans';
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Shadcn Chat",
-  description: "Chat/message components for Shadcn",
+  title: "Cinebot",
+  description: "Chatbot que responde perguntas relacionadas a filmes",
 };
 
 export const viewport = {
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body className={GeistSans.className}>{children}</body>
     </html>
   );
