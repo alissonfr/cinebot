@@ -14,6 +14,7 @@ export default function Home() {
       <div className="flex justify-between max-w-5xl w-full items-center">
         <Link href="#" className="text-4xl font-bold text-gradient">CineBot</Link>
         <Link
+          target="_blank"
           href="https://github.com/alissonfr"
           className={cn(
             buttonVariants({ variant: "ghost", size: "icon" }),
@@ -30,7 +31,7 @@ export default function Home() {
 
       <div className="flex justify-between max-w-5xl w-full items-start text-xs md:text-sm text-muted-foreground ">
       <span></span>
-      <p className="max-w-[150px] sm:max-w-lg text-right">Código fonte disponível no <a className="font-semibold" href="https://github.com/alissonfr/cinechat">GitHub</a>.</p>
+      <p className="max-w-[150px] sm:max-w-lg text-right">Código fonte disponível no <a className="font-semibold" target="_blank" href="https://github.com/alissonfr/cinebot">GitHub</a>.</p>
       </div>
     </main>
   );
