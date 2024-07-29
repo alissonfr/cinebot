@@ -1,6 +1,12 @@
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 from typing import List
+import sys
+from os import path
+
+ROOT_FOLDER = path.abspath(path.join(path.dirname(__file__), '..'))
+sys.path.append(ROOT_FOLDER)
+
 from app.config.file_reader import read_files
 from app.config.constants import BOT_NAME, DATA_PATH
 
