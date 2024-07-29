@@ -4,23 +4,9 @@ export enum MessageType {
 }
 
 export interface Message {
-    id: number;
     type: MessageType;
     message: string;
 }
-
-export const messages: Message[] = [
-    {
-        id: 1,
-        type: MessageType.ADMIN,
-        message: 'Ola humano',
-    },
-    {
-        id: 2,
-        type: MessageType.USER,
-        message: 'Hey!',
-    }
-]
 
 interface User {
     avatar: string;

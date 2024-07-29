@@ -1,24 +1,20 @@
 import { bot, Message, MessageType, user } from "@/app/data";
 import { cn } from "@/lib/utils";
-import React, { useRef } from "react";
+import React, { useRef, useEffect,  } from "react";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import ChatBottombar from "./chat-bottombar";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface ChatListProps {
-  messages?: Message[];
-  sendMessage: (newMessage: Message) => void;
   isMobile: boolean;
+  messages: Message[];
+  sendMessage: (message: Message) => void
 }
 
-export function ChatList({
-  messages,
-  sendMessage,
-  isMobile
-}: ChatListProps) {
+export function ChatList({ isMobile, messages, sendMessage }: ChatListProps) {
   const messagesContainerRef = useRef<HTMLDivElement>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (messagesContainerRef.current) {
       messagesContainerRef.current.scrollTop =
         messagesContainerRef.current.scrollHeight;

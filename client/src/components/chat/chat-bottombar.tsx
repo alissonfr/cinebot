@@ -1,8 +1,6 @@
 import {
   FileImage,
-  Mic,
   Paperclip,
-  PlusCircle,
   SendHorizontal,
   ThumbsUp,
 } from "lucide-react";
@@ -15,15 +13,13 @@ import { Message, MessageType } from "@/app/data";
 import { Textarea } from "../ui/textarea";
 
 interface ChatBottombarProps {
-  sendMessage: (newMessage: Message) => void;
   isMobile: boolean;
+  sendMessage: (message: Message) => void
 }
 
 export const BottombarIcons = [{ icon: FileImage }, { icon: Paperclip }];
 
-export default function ChatBottombar({
-  sendMessage, isMobile,
-}: ChatBottombarProps) {
+export default function ChatBottombar({ isMobile, sendMessage }: ChatBottombarProps) {
   const [message, setMessage] = useState("");
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -33,7 +29,6 @@ export default function ChatBottombar({
 
   const handleThumbsUp = () => {
     const newMessage: Message = {
-      id: message.length + 1,
       type: MessageType.USER,
       message: "👍",
     };
@@ -44,7 +39,6 @@ export default function ChatBottombar({
   const handleSend = () => {
     if (message.trim()) {
       const newMessage: Message = {
-        id: message.length + 1,
         type: MessageType.USER,
         message: message.trim(),
       };

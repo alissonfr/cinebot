@@ -1,7 +1,6 @@
 from flask import Blueprint, request, jsonify
-from config.constants import MINIMAL_CONFIDENCE
-from services.chatbot_service import ChatbotService
-from config.constants import MINIMAL_CONFIDENCE, BOT_NAME, DATA_PATH
+from app.config.constants import MINIMAL_CONFIDENCE, BOT_NAME, DATA_PATH
+from app.services.chatbot_service import ChatbotService
 
 bot_blueprint = Blueprint('bot', __name__)
 bot_service = ChatbotService(BOT_NAME, DATA_PATH)

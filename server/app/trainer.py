@@ -1,8 +1,8 @@
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
-from typing import List, Dict
-from config.file_reader import read_files
-from config.constants import BOT_NAME, DATA_PATH
+from typing import List
+from app.config.file_reader import read_files
+from app.config.constants import BOT_NAME, DATA_PATH
 
 class ChatbotTrainer:
     def __init__(self, name: str, files: List[str]):

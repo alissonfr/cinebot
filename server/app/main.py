@@ -1,14 +1,30 @@
+import sys
+from os import path
 from flask import Flask
-from config.constants import BOT_NAME, DATA_PATH
-from routes.main_routes import main_blueprint
-from routes.bot_routes import bot_blueprint
+from flask_cors import CORS
 
-def create_app():
-    app = Flask(__name__)
-    app.register_blueprint(main_blueprint)
-    app.register_blueprint(bot_blueprint, url_prefix='/bot')
-    return app
+ROOT_FOLDER = path.abspath(path.join(path.dirname(__file__), '..'))
+sys.path.append(ROOT_FOLDER)
+
+from app.routes.main_routes import main_blueprint
+from app.routes.bot_routes import bot_blueprint
+
+class Main:
+    def __init__(self):
+        self.app = Flask(__name__)
+        self.configure_app()
+        self.register_blueprints()
+
+    def configure_app(self):
+        CORS(self.app)
+
+    def register_blueprints(self):
+        self.app.register_blueprint(main_blueprint)
+        self.app.register_blueprint(bot_blueprint, url_prefix='/bot')
+
+    def run(self, debug=False):
+        self.app.run(debug=debug)
 
 if __name__ == '__main__':
-    app = create_app()
-    app.run(debug=True)
+    main = Main()
+    main.app.run(debug=True)

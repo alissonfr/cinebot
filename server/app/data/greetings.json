@@ -15,8 +15,7 @@
         "questions": [
             "bom dia",
             "bom dia, como vai?",
-            "bom dia, tudo bem?",
-            "um bom dia para você"
+            "bom dia, tudo bem?"
         ],
         "answer": "Bom dia! Espero que seu dia seja ótimo!"
     },
@@ -24,8 +23,7 @@
         "questions": [
             "boa tarde",
             "boa tarde, tudo bem?",
-            "boa tarde, como você está?",
-            "uma boa tarde para você"
+            "boa tarde, como você está?"
         ],
         "answer": "Boa tarde! Como posso ajudar você?"
     },
@@ -33,8 +31,7 @@
         "questions": [
             "boa noite",
             "boa noite, tudo bem?",
-            "boa noite, como vai?",
-            "tenha uma boa noite"
+            "boa noite, como vai?"
         ],
         "answer": "Boa noite! Espero que tenha um bom descanso."
     }

@@ -6,7 +6,6 @@ import {
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
 import { Chat } from "./chat";
-import { messages } from "@/app/data";
 
 interface ChatLayoutProps {
   defaultLayout: number[] | undefined;
@@ -38,7 +37,6 @@ export function ChatLayout({ defaultLayout = [320, 480] }: ChatLayoutProps) {
     >
       <ResizablePanel defaultSize={defaultLayout[1]} minSize={30}>
         <Chat
-          messages={messages}
           isMobile={isMobile}
         />
       </ResizablePanel>

@@ -1,29 +1,35 @@
-import { Message } from "@/app/data";
+import { Message, MessageType } from "@/app/data";
 import ChatTopbar from "./chat-topbar";
 import { ChatList } from "./chat-list";
-import React from "react";
+import React, { useState } from "react";
+import { sendMessage } from "@/lib/api";
 
 interface ChatProps {
-  messages?: Message[];
   isMobile: boolean;
 }
 
-export function Chat({ messages, isMobile }: ChatProps) {
-  const [messagesState, setMessages] = React.useState<Message[]>(
-    messages ?? []
-  );
+export function Chat({ isMobile }: ChatProps) {
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [precision, setPrecision] = useState<number>(0);
 
-  const sendMessage = (newMessage: Message) => {
-    setMessages([...messagesState, newMessage]);
-  };
+
+  const handleSendMessage = async (message: Message) => {
+    setMessages(prevMessages => [...prevMessages, message]);
+    const answer = await sendMessage(message.message);
+    setPrecision(answer.confidence)
+    const newMessage: Message = {
+      type: MessageType.ADMIN,
+      message: answer.answer
+    }
+    setMessages(prevMessages => [...prevMessages, newMessage]);
+  }
 
   return (
     <div className="flex flex-col justify-between w-full h-full">
-      <ChatTopbar />
-
+      <ChatTopbar precision={precision} />
       <ChatList
-        messages={messagesState}
-        sendMessage={sendMessage}
+        sendMessage={handleSendMessage}
+        messages={messages}
         isMobile={isMobile}
       />
     </div>

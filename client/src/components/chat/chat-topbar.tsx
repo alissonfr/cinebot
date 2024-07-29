@@ -8,7 +8,11 @@ import { bot } from '@/app/data';
 
 export const TopbarIcons = [{ icon: Info }];
 
-export default function ChatTopbar() {
+interface ChatTopbarProps {
+  precision: number;
+}
+
+export default function ChatTopbar({ precision }: ChatTopbarProps) {
   return (
     <div className="w-full h-20 flex p-4 justify-between items-center border-b">
         <div className="flex items-center gap-2">
@@ -23,7 +27,7 @@ export default function ChatTopbar() {
           </Avatar>
           <div className="flex flex-col">
             <span className="font-medium">{bot.name}</span>
-            <span className="text-xs">Online</span>
+            <span className="text-xs">Precisão: { precision * 100 }%</span>
           </div>
         </div>
 
